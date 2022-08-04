@@ -10,17 +10,15 @@
 
 1. python -m venv .venv
 
-2. source `.venv/bin/activate (Linux & Mac)` or `.venv\Scripts\activate (Windows)`
+2. source `.venv/bin/activate (Linux & MacOS)` or `.venv\Scripts\activate (Windows)`
 
-3. pip install --upgrade pip
+3. pip install -r requirements.txt
 
-4. pip install -r requirements.txt
+4. Create main.py file (main.py file already created in repository)
 
-5. Create main.py file (main.py file already created in repository)
+5. uvicorn main:app --reload
 
-6. uvicorn main:app --reload
-
-7. REST API Calls 
+6. REST API Calls 
 
 GET http://localhost:8000/api/ping (Postman collection available in repository)
 
