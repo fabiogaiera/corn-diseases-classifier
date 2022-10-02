@@ -1,55 +1,46 @@
-# Corn Diseases Classifier API
+# Corn Diseases Classifier API  
 
-## The code works with TensorFlow 2.10.0
+Given an image as input, the API classifies common diseases from corn.  
 
-## Model training with dataset https://www.tensorflow.org/datasets/catalog/plant_village
+## Model training  
 
-1. Execute python notebook in notebook/Model Training.ipynb 
+We are going to train a model using the dataset https://www.tensorflow.org/datasets/catalog/plant_village  
 
-## API deployment that serves the model
+**Execute with Jupyter Notebook the Python notebooks `Dependencies.ipynb` and `Model Training.ipynb`**  
 
-1. python -m venv .venv
-
-2. source `.venv/bin/activate (Linux & MacOS)` or `.venv\Scripts\activate (Windows)`
-
-3. pip install -r requirements.txt
-
-4. Create main.py file (main.py file already created in repository)
-
-5. uvicorn main:app --reload
-
-6. REST API Calls 
-
-GET http://localhost:8000/api/ping (Postman collection available in repository)
-
-POST http://localhost:8000/api/predict (Postman collection available in repository)
-
+## API deployment that serves the model  
 
 **Create environment for TensorFlow Lite**   
-python -m venv .tflite-env  
+python -m venv .venv  
 
-**Activate the environment**   
-source .tflite-env/bin/activate   
+**Activate the environment**  
+source `.venv/bin/activate` (Linux & MacOS) or `.venv\Scripts\activate` (Windows)  
 
 **Install some dependencies**  
 pip install --upgrade pip  
 pip install fastapi  
 pip install uvicorn  
-pip install gunicorn  
-pip install tflite-runtime   
+pip install gunicorn   
+pip install tflite-runtime  
 pip install pillow  
-pip install python-multipart   
+pip install python-multipart     
 
-**Create requirements.txt file**   
+**Create requirements.txt file**     
 pip freeze > requirements.txt  
 
 **Start FastAPI application**  
-Once the environment is active, just execute `uvicorn main:app --reload`  
+Once the environment is active, just execute `uvicorn main:app --reload`    
+
+**REST API Calls**  
+
+GET http://localhost:8000/api/ping (Postman collection available in repository)  
+
+POST http://localhost:8000/api/predict (Postman collection available in repository)  
 
 **Heroku commands for troubleshooting**  
 
-heroku login
+heroku login  
 
-heroku run bash -a scenes-classifier
+heroku run bash -a corn-diseases-classifier  
 
-heroku logs --tail -a scenes-classifier
+heroku logs --tail -a corn-diseases-classifier  
