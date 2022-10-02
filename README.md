@@ -19,7 +19,7 @@ We are going to train a model using the dataset https://www.tensorflow.org/datas
 
 **Activate the environment**  
 
-* source `.venv/bin/activate` in Linux & MacOS, or 
+* `source .venv/bin/activate` in Linux & MacOS, or 
 * `.venv\Scripts\activate` in Windows  
 
 **Install some dependencies**  
