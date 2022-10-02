@@ -57,12 +57,12 @@ html_content = """
 
                 <body>
 
-                Corn Diseases Classifier API
+                <h1>Corn Diseases Classifier API</h1>
 
                 <br/>
                 <br/>
 
-                Given an image as input, the API classifies common diseases for corn. 
+                Given an image as input, the API classifies common diseases from corn. 
 
                 <br/>
                 <br/>
