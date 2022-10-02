@@ -6,7 +6,9 @@ Given an image as input, the API classifies common diseases from corn.
 
 We are going to train a model using the dataset https://www.tensorflow.org/datasets/catalog/plant_village  
 
-**Execute with Jupyter Notebook the Python notebooks `Dependencies.ipynb` and `Model Training.ipynb`**  
+**Execute with Jupyter Notebook** 
+Python notebook `Dependencies.ipynb`  
+Python notebook `Model Training.ipynb`    
 
 ## API deployment that serves the model  
 
@@ -40,7 +42,5 @@ POST http://localhost:8000/api/predict (Postman collection available in reposito
 **Heroku commands for troubleshooting**  
 
 heroku login  
-
 heroku run bash -a corn-diseases-classifier  
-
 heroku logs --tail -a corn-diseases-classifier  
