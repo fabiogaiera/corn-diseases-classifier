@@ -14,12 +14,16 @@ We are going to train a model using the dataset https://www.tensorflow.org/datas
 ## API deployment that serves the model  
 
 **Create environment for TensorFlow Lite**   
-python -m venv .venv  
+
+* python -m venv .venv  
 
 **Activate the environment**  
-source `.venv/bin/activate` (Linux & MacOS) or `.venv\Scripts\activate` (Windows)  
+
+* source `.venv/bin/activate` in Linux & MacOS, or 
+* `.venv\Scripts\activate` in Windows  
 
 **Install some dependencies**  
+
 * pip install --upgrade pip  
 * pip install fastapi  
 * pip install uvicorn  
@@ -29,15 +33,16 @@ source `.venv/bin/activate` (Linux & MacOS) or `.venv\Scripts\activate` (Windows
 * pip install python-multipart     
 
 **Create requirements.txt file**     
+
 * pip freeze > requirements.txt  
 
 **Start FastAPI application**  
+
 * Once the environment is active, just execute `uvicorn main:app --reload`    
 
 **REST API Calls**  
 
 * GET http://localhost:8000/api/ping (Postman collection available in repository)  
-
 * POST http://localhost:8000/api/predict (Postman collection available in repository)  
 
 **Heroku commands for troubleshooting**  
