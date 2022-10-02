@@ -73,12 +73,12 @@ html_content = """
                 <br/>
                 <br/>
 
-                <b>GET</b> https://corn-diseases-classifier.herokuapp.com/api/ping (Postman collection available in repository)
+                <b>GET</b> https://corn-diseases-classifier.herokuapp.com/api/ping (Postman collection available in <a href="https://github.com/fabiogaiera/corn-diseases-classifier/tree/main/postman">GitHub repository</a>)
 
                 <br/>
                 <br/>
 
-                <b>POST</b> https://corn-diseases-classifier.herokuapp.com/api/predict (Postman collection available in repository)
+                <b>POST</b> https://corn-diseases-classifier.herokuapp.com/api/predict (Postman collection available in <a href="https://github.com/fabiogaiera/corn-diseases-classifier/tree/main/postman">GitHub repository</a>)
 
                 </body>
 
