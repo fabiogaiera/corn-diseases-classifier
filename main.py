@@ -57,7 +57,7 @@ html_content = """
 
                 <body>
 
-                <center>Corn Diseases Classifier API<center>
+                Corn Diseases Classifier API
 
                 <br/>
                 <br/>
