@@ -21,6 +21,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 new_size = (256, 256)
 
+@app.get("/", response_class=HTMLResponse)
+async def html_root():
+    return html_content
 
 @app.get("/api/ping", response_class=HTMLResponse)
 async def ping():
@@ -42,3 +45,31 @@ async def predict(file: UploadFile = File(...)):
     return {
         "class": class_names[np.argmax(output_data)]
     }
+
+
+html_content = """
+
+                <html>
+
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                </head>
+
+                <body>
+
+                REST API Calls
+
+                <br/>
+
+                <b>GET</b> http://localhost:8000/api/ping (Postman collection available in repository)
+
+                <br/>
+
+                <b>POST</b> http://localhost:8000/api/predict (Postman collection available in repository)
+
+                </body>
+
+                </html>
+
+
+               """
