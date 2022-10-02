@@ -57,15 +57,28 @@ html_content = """
 
                 <body>
 
+                <center>Corn Diseases Classifier API<center>
+
+                <br/>
+                <br/>
+
+                Given an image as input, the API classifies common diseases for corn. 
+
+                <br/>
+                <br/>
+
+
                 REST API Calls
 
                 <br/>
-
-                <b>GET</b> http://localhost:8000/api/ping (Postman collection available in repository)
-
                 <br/>
 
-                <b>POST</b> http://localhost:8000/api/predict (Postman collection available in repository)
+                <b>GET</b> https://corn-diseases-classifier.herokuapp.com/api/ping (Postman collection available in repository)
+
+                <br/>
+                <br/>
+
+                <b>POST</b> https://corn-diseases-classifier.herokuapp.com/api/predict (Postman collection available in repository)
 
                 </body>
 
