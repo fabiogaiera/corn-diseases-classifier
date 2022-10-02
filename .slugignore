@@ -1,0 +1,13 @@
+.git/
+.idea/
+.tf-env/
+.tflite-env/
+__pycache__/
+dataset/
+notebooks/
+SavedModel/
+.gitignore
+LICENSE
+Notes.md
+README.md
+.ipynb_checkpoints/

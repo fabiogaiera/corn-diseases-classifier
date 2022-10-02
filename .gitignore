@@ -1,5 +1,6 @@
-.idea
-.ipynb_checkpoints
-model
-__pycache__
-.venv
+.idea/
+.tf-env/
+.tflite-env/
+__pycache__/
+SavedModel/
+.ipynb_checkpoints/

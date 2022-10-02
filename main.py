@@ -1,13 +1,24 @@
 import io
 import numpy as np
-import tensorflow as tf
+import tflite_runtime.interpreter as tflite
+
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from PIL import Image
 
-app = FastAPI()
-model = tf.keras.models.load_model('model/')
+# TensorFlow Lite initialization
+
+interpreter = tflite.Interpreter(model_path='static/model/model.tflite')
+interpreter.allocate_tensors()
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
+
 class_names = ["Common Rust", "Gray Leaf Spot", "Healthy", "Northern Leaf Blight"]
+
+app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 new_size = (256, 256)
 
 
@@ -18,15 +29,16 @@ async def ping():
 
 @app.post("/api/predict", response_class=JSONResponse)
 async def predict(file: UploadFile = File(...)):
+    
     f = await file.read()
     img = Image.open(io.BytesIO(f)).resize(new_size)
-    img_array = tf.keras.utils.img_to_array(img)
-    img_array = tf.expand_dims(img_array, 0)
-    predictions = model.predict(img_array)
-    score = tf.nn.softmax(predictions[0])
-    predicted_class = class_names[np.argmax(score)]
-    confidence = 100 * np.max(score)
+
+    input_shape = input_details[0]['shape']
+    input_data = np.array(img).reshape(input_shape).astype(np.float32)
+    interpreter.set_tensor(input_details[0]['index'], input_data)
+    interpreter.invoke()
+    output_data = interpreter.get_tensor(output_details[0]['index']).reshape(4, )    
+
     return {
-        "class": predicted_class,
-        "confidence": confidence
+        "class": class_names[np.argmax(output_data)]
     }
