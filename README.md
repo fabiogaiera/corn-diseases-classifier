@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Corn Diseases Classifier API  
 
 Given an image as input, the API classifies common diseases from corn.  
